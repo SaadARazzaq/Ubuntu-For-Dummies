@@ -1,0 +1,278 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UBUNTU CHEATSHEET;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+-------------------------------------------------------------------------
+------------------------[To install gcc and g++]-------------------------
+-------------------------------------------------------------------------
+
+NOTE: PLEASE HAVE A SOLID INTERNET CONNECTION BEFORE INSTALLING ANYTHING!
+
+1. sudo apt-get update
+
+2. gcc --version // to check if installed or not
+
+3. g++ --version // to check if installed or not
+
+4. sudo apt install gcc g++
+
+5. sudo apt install build-essential
+
+6. gcc --version // to check if installed or not
+
+7. g++ --version // to check if installed or not
+
+
+-------------------------------------------------------------------------
+----------------------------[Basic Commands]-----------------------------
+-------------------------------------------------------------------------
+
+1. To clear the screen: (ctrl+l) or (clear)
+
+2. Go to a file directory: (cd FileOrFolder_name) // we only store folders or files on the desktop and mainly use (cd Desktop) or (cd Desktop/file)
+
+3. Go back to the home screen: (cd)
+
+4. To go back one folder only: (cd ..)
+
+5. See all folders and files in a directory: ls or (ls -1)
+
+-------------------------File Handling------------------------------------
+
+5. Move a file from one directory to another: mv filename.txt ~/Directory(e.g., Desktop)/
+
+6. Create a text file and write in it: (cat > filename.txt) OR (touch filename.txt)
+
+7. Open a Text File on the screen: gnome-open filename.txt
+
+8. Find some string in a file: grep "Word" filename.txt
+
+9. Move one file's contents to another file (e.g., file1 to file2): mv file1.txt file2.txt
+
+10. Make a Directory: mkdir dirname
+
+11. Delete a file: rm filename.txt
+
+12. Display file contents on Terminal: cat filename.txt
+
+13. Append in a File: cat >> filename.txt
+
+14. Display a certain number of beginning lines in a file: head -n filename.txt // n is the number of lines you want to display from the beginning
+
+15. Display a certain number of ending lines in a file: tail -n filename.txt // n is the number of lines you want to display from the end
+
+16. Show a selected number of files in a directory from the first: ls | head -n // n is the number of files you want to display from the first
+
+17. Show a selected number of files in a directory from the last: ls | tail -n // n is the number of files you want to display from the last
+
+18. Copy a file: cp source_file destination_file // copies the source file to the destination
+
+19. Copy a directory: cp -r source_directory destination_directory // copies the source directory to the destination recursively
+
+20. Rename a file: mv old_filename new_filename // renames the old file to the new file name
+
+
+-------------------------------------------------------------------------
+-------------------------------[Network]---------------------------------
+-------------------------------------------------------------------------
+
+1. Check your IP address: ifconfig
+
+2. Check network connectivity: ping www.google.com
+
+3. Check network ports: netstat -tuln
+
+4. Check DNS information: nslookup www.example.com
+
+5. Check network interfaces: ip a
+
+6. Check listening ports: sudo lsof -i -P -n | grep LISTEN
+
+
+-------------------------------------------------------------------------
+--------------------------------[Processes]-------------------------------
+-------------------------------------------------------------------------
+
+1. List running processes: top
+
+2. Kill a process by PID: kill PID // replace PID with the process ID
+
+3. Kill a process by name: pkill process_name // replace process_name with the name of the process
+
+4. Check process resource usage: ps -aux
+
+
+-------------------------------------------------------------------------
+----------------------------------[Users]---------------------------------
+-------------------------------------------------------------------------
+
+1. Create a new user: sudo adduser username // replace username with the desired username
+
+2. Delete a user: sudo deluser username // replace username with the username to be deleted
+
+3. Change user password: sudo passwd username // replace username with the username
+
+
+-------------------------------------------------------------------------
+---------------------------------[System]---------------------------------
+-------------------------------------------------------------------------
+
+1. Show system information: uname -a
+
+2. Show disk usage: df -h
+
+3. Show memory usage: free -m
+
+4. Show CPU information: lscpu
+
+5. Restart the system: sudo reboot
+
+6. Shutdown the system: sudo shutdown now
+
+7. Update packages: sudo apt-get update
+
+8. Upgrade packages: sudo apt-get upgrade
+
+9. Install a package: sudo apt-get install package_name // replace package_name with the name of the package
+
+10. Uninstall a package: sudo apt-get remove package_name // replace package_name with the name of the package
+
+11. Search for a package: apt-cache search keyword // replace keyword with the search term
+
+12. Check available updates: sudo apt-get upgrade --dry-run
+
+
+-------------------------------------------------------------------------
+-----------------------------[Compression]--------------------------------
+-------------------------------------------------------------------------
+
+1. Create a tar archive: tar -cvf archive.tar files // replace archive.tar with the desired archive name and files with the files to be included in the archive
+
+2. Extract a tar archive: tar -xvf archive.tar // replace archive.tar with the name of the archive
+
+3. Create a zip archive: zip archive.zip files // replace archive.zip with the desired archive name and files with the files to be included in the archive
+
+4. Extract a zip archive: unzip archive.zip // replace archive.zip with the name of the archive
+
+5. Compress a file using gzip: gzip filename // replaces filename with the name of the file
+
+6. Decompress a file using gzip: gzip -d filename.gz // replaces filename.gz with the name of the compressed file
+
+7. Compress a file using bzip2: bzip2 filename // replaces filename with the name of the file
+
+8. Decompress a file using bzip2: bzip2 -d filename.bz2 // replaces filename.bz2 with the name of the compressed file
+
+
+-------------------------------------------------------------------------
+----------------------------[System Logs]------------------------------
+-------------------------------------------------------------------------
+
+1. View system logs: tail -f /var/log/syslog
+
+2. View kernel logs: dmesg
+
+3. View boot logs: journalctl -b
+
+
+-------------------------------------------------------------------------
+--------------------------------[Package Management]----------------------
+-------------------------------------------------------------------------
+
+1. Search for a package: apt search package_name // replace package_name with the desired package name
+
+2. Show package information: apt show package_name // replace package_name with the desired package name
+
+3. Install a package: sudo apt install package_name // replace package_name with the desired package name
+
+4. Update packages: sudo apt update
+
+5. Upgrade packages: sudo apt upgrade
+
+6. Remove a package: sudo apt remove package_name // replace package_name with the desired package name
+
+7. Clean package cache: sudo apt clean
+
+
+-------------------------------------------------------------------------
+------------------------------[File Permissions]--------------------------
+-------------------------------------------------------------------------
+
+1. Change file permissions: chmod permissions filename // replace permissions with the desired permissions and filename with the name of the file
+
+2. Change directory permissions: chmod permissions directory_name // replace permissions with the desired permissions and directory_name with the name of the directory
+
+3. Change ownership of a file or directory: chown owner:group filename // replace owner with the desired owner and group with the desired group
+
+
+-------------------------------------------------------------------------
+-----------------------------[User Permissions]---------------------------
+-------------------------------------------------------------------------
+
+1. Add user to a group: sudo usermod -aG group_name username // replace group_name with the desired group name and username with the desired username
+
+2.Grant sudo privileges to a user: sudo usermod -aG sudo username // replace username with the desired username
+
+3. Revoke sudo privileges from a user: sudo deluser username sudo // replace username with the desired username
+
+
+-------------------------------------------------------------------------
+--------------------------------[Easter Eggs]-----------------------------
+-------------------------------------------------------------------------
+
+1. Install and run the sl command: sudo apt install sl && sl
+   After installing, enter sl to see a train animation 🚂
+
+2. Install and run the fortune and cowsay commands: sudo apt install fortune cowsay && fortune | cowsay
+   After installing, enter fortune | cowsay to display a random quote with a cow saying it 🐮
+
+3. Install and run the cmatrix command: sudo apt install cmatrix && cmatrix
+   After installing, enter cmatrix to see a Matrix-style rain animation 💻
+
+4. Install and run the figlet command: sudo apt install figlet && figlet "Hello"
+   After installing, enter figlet followed by your desired text to generate ASCII art of the text
+
+5. Install and run the lolcat command: sudo apt install lolcat && echo "Hello, World!" | lolcat
+   After installing, use the lolcat command to display text with rainbow colors 🌈
+
+6. Install and run the nyancat command: sudo apt install nyancat && nyancat
+   After installing, enter nyancat to see a flying rainbow cat 🌈🐱
+
+7. Install and run the slurm command: sudo apt install slurm && slurm
+   After installing, enter slurm to see a slime trail animation
+
+8. Install and run the oneko command: sudo apt install oneko && oneko
+   After installing, enter oneko to see a cute cat chasing your mouse cursor 🐱
+
+9. Install and run the rig command: sudo apt install bsdgames && rig
+   After installing, enter rig to display random signatures and computer-generated user information
+
+10. Install and run the bb command: sudo apt install bb && bb
+    After installing, enter bb to see a collection of visual demos and mini-applications
+
+
+*************************************************************************
+Run C++ Program on Ubuntu
+*************************************************************************
+
+*****Pre-req*****
+Step 1: Create a text editor file with some C++ code
+Step 2: Save the file with any file name and with the (.cpp) file type on the Desktop. Let's suppose I create a text editor file with the name Hello.cpp
+
+*****Real Command Work*****
+Step 3: Open the terminal and write the below code as specified:
+
+1. First, check if g++ is installed or not [HINT: SEE IN "To install gcc and g++" PORTION OF THIS TXT]
+
+2. cd Desktop // Just to come in the Desktop Directory
+
+3. ls // To check all files present on the Desktop to verify if Hello.cpp is present on the Desktop
+
+4. g++ -o obj Hello.cpp // obj is the file made to store the output of the cpp code. Hello.cpp file and (obj file) can be of any name
+
+6. ./obj // Just to print the Hello.cpp program output on the terminal
+
+
+*************************************************************************
+Run C Program on Ubuntu
+*************************************************************************
+
+SAME AS ABOVE PORTION OF THIS TXT FILE -> "Run C++ Program on Ubuntu".
+JUST REPLACE (g++ WITH gcc) and (.cpp WITH .c) AND WRITE C PROGRAM IN THE FILE YOU WANT TO RUN
